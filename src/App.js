@@ -1,408 +1,141 @@
 
-// import ServiceCard from './components/servescard';
+import { Stack } from '@mui/material';
+import './App.css';
+import Header from './components/header';
+import Hero from './components/hero';
+import Matrics from './components/matrics';
+import Services from './components/servesl';
+import ServiceCard from './components/servescard';
 import IC_CODE from "./assets/ic_code.png"
-// import IC_WEB from "./assets/ic_web.png"
-// import IC_DESKTOP from "./assets/ic_desktop.png"
-// import IC_MOBILE from "./assets/ic_mobile.png"
-// import STRIPE from "./assets/ic_stripe.png";
-// import Text from './components/text';
-// import Image from "next/image";
-import React from "react";
-import HERO_BG from "./assets/brand/hero_bg.png"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
-import HERO_FLAIR from "./assets/brand/hero_flair.png"
-import ServiceCard from "./components/serviceCard";
-import SectionDivider from "./components/sectionDivider";
-import TestimonialCard from "./components/testimonialCard";
-import IntegrationCard from "./components/integrationCard";
+import IC_WEB from "./assets/ic_web.png"
+import IC_DESKTOP from "./assets/ic_desktop.png"
+import IC_MOBILE from "./assets/ic_mobile.png"
+import Testimonialcard from './components/testimonialcard';
+import Integration from './components/Integration';
+import Integrationcard from './components/integrationcard ';
+import STRIPE from "./assets/ic_stripe.png";
+import Text from './components/text';
+// import HERO_BG from "./assets/brand/hero_bg.png"
+import Input from './components/input';
+import Team from './components/team';
 
+ export default function App() {
+  //  let about = { about1="NodeJS REST API" 
+  //  about2="GraphQL API"
+  //  about3="Poti API"}
+  return (
+   
+    <Stack sx={{height:"800vh", backgroundColor:"#030712",}} >
+        <Stack sx={{height:"800px", backgroundColor:"#030712",
+      }}>
+     <Header/> 
+     <Hero /> 
+     </Stack>
+     <Stack sx={{  backgroundColor:"#030712",alignItems:"center" }}>
+     <Matrics />
+     {/* service section */}
+     <Services name="Services"/>
+     <Stack spacing={"48px"} >
+     <Stack direction={"row"}spacing={"25px"}>
+     <ServiceCard  username="Bot Development"about1="NodeJS REST API"about2="GraphQL API"about3="Poti API"src= {IC_CODE}/>
+     <ServiceCard username="Web App Development"about1="React + MUIv5"about2="NextJS + Tailwindcss"about3="Widgets" src= {IC_WEB}/>
+     <ServiceCard username="Desktop App Development"  about1=""about2=""about3=""  src= {IC_DESKTOP}/>
+     <ServiceCard username="Android App Development"about1=""about2=""about3="" src= {IC_MOBILE}/>
+     </Stack >
+     <Stack direction={"row"}spacing={"25px"} ><ServiceCard  username="Bot Development"about1="NodeJS REST API"about2="GraphQL API"about3="Poti API"src= {IC_CODE}
+        />
+     <ServiceCard username="Web App Development"about1="React + MUIv5"about2="NextJS + Tailwindcss"about3="Widgets" src= {IC_WEB}/>
+     <ServiceCard username="Desktop App Development"  about1=""about2=""about3=""  src= {IC_DESKTOP}/>
+     <ServiceCard username="Android App Development"about1=""about2=""about3="" src= {IC_MOBILE}/>
+    </Stack>
+    </Stack>
+     <Services name="Testimonials "/>
+     <Stack direction={"row"}>
+     <Testimonialcard Author="shahid ali"/>
+     <Testimonialcard Author="Ahmed Jamal "/>
+     <Testimonialcard Author="Sattar "/>
+     </Stack>
+     <Integration/>
 
-import { Button, Stack } from "@mui/material";
-import Testimonialcard from "./components/testimonialCard";
-
-export default function PageHome() {
-    return (
-        <main sx={{ overflow: "hidden" }}>
-            <Stack
-                style={{
-                    display: "flex",
-                    position: "absolute",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    overflow: "hidden",
-                    opacity: 0.6,
-                    zIndex: -97,
-                    width: "100%",
-                }}
-            >
-                <image src={HERO_BG} alt="" style={{ flex: 1, zIndex: -1 }} />
-                <image
-                    src={HERO_FLAIR}
-                    alt=""
-                    style={{
-                        position: "absolute",
-                        overflow: "clip",
-                        zIndex: 1,
-                        left: 0,
-                    }}
-                />
-            </Stack>
-            <Stack
-                className="flex flex-row justify-evenly items-end my-20 mb-80"
-                style={{ paddingTop: "70px", overflow: "visible" }}
-            >
-                <Stack
-                    className="flex flex-col space-y-4"
-                    style={{ marginTop: "62px", overflow: "visible" }}
-                >
-                    <Stack
-                        style={{
-                            display: "flex",
-                            flexDirection: "row",
-                            justifyContent: "space-between",
-                            width: "100%",
-                            height: "80px",
-                            overflow: "visible",
-                        }}
-                    >
-                        <Stack>
-                            <image
-                                src={IC_CODE}
-                                alt="Sparkel"
-                                style={{
-                                    marginTop: "0px",
-                                    marginLeft: "-80px",
-                                    transform: "scale(1.3)",
-                                    zIndex: -99,
-                                }}
-                            />
-                        </Stack>
-                        <Stack style={{ marginRight: "40px" }}>
-                            <image
-                                src={IC_CODE}
-                                alt="Arrow"
-                                style={{ marginRight: "0px", zIndex: -100 }}
-                            />
-                        </Stack>
-                    </Stack>
-                    <h1
-                        // className={className}
-                        style={{
-                            fontWeight: 700,
-                            lineHeight: "68px",
-                            fontSize: "68px",
-                        }}
-                    >
-                        <span
-                            style={{
-                                background:
-                                    "linear-gradient(144deg, #3B82F6 0%, #D946EF 100%)",
-                                backgroundClip: "text",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                            }}
-                        >
-                            Coding
-                        </span>{" "}
-                        the future, <br />
-                        today.
-                    </h1>
-                    <p
-                        style={{
-                            maxWidth: "680px",
-                            fontSize: "20px",
-                            lineHeight: "28px",
-                            color: "#D1D5DB",
-                        }}
-                    >
-                        We offer a comprehensive suite of services designed to
-                        meet your unique needs. From Desktop, Android, and iOS
-                        App development to Website Design &amp; Development,
-                        we&apos;ve got you covered.{" "}
-                    </p>
-                    <Button
-                        style={{
-                            background: "#3B82F6",
-                            padding: "12px 16px",
-                            width: "154px",
-                            borderRadius: "12px",
-                            fontSize: "16px",
-                            marginTop: "80px",
-                            border: "5px solid #1E3A8A",
-                        }}
-                    >
-                        Learn more{" "}
-                        <FontAwesomeIcon
-                            // icon={faArrowRightLong}
-                        ></FontAwesomeIcon>
-                    </Button>
-                </Stack>
-                <Stack
-                    style={{
-                        height: "100%",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        animationName: "hoverAnimation",
-                        animationDuration: "5s",
-                        animationIterationCount: "infinite",
-                    }}
-                >
-                    <image src={HERO_BG} alt="Illustration" />
-                </Stack>
-            </Stack>
-            {/* The divider  */}
-            <SectionDivider title="Services" />
-            <Stack className="flex flex-row justify-center items-center my-40">
-                <Stack className="grid grid-cols-4 gap-8 gap-y-12">
-                    {/* Start of the card  */}
-                    <ServiceCard heading="Bot Development" imgSrc={IC_CODE}>
-                        <span>Discord Bots</span>
-                        <span>WhatsApp Bots</span>
-                        <span>Telegram Bots</span>
-                    </ServiceCard>
-                    <ServiceCard heading="Web App Development" imgSrc={IC_CODE}>
-                        <span>React + MUI v5</span>
-                        <span>NextJS + Tailwindcss</span>
-                        <span>Widgets</span>
-                    </ServiceCard>
-                    <ServiceCard heading="Web App Development" imgSrc={IC_CODE}>
-                        <span>React + MUI v5</span>
-                        <span>NextJS + Tailwindcss</span>
-                        <span>Widgets</span>
-                    </ServiceCard>
-                    <ServiceCard heading="Web App Development" imgSrc={IC_CODE}>
-                        <span>React + MUI v5</span>
-                        <span>NextJS + Tailwindcss</span>
-                        <span>Widgets</span>
-                    </ServiceCard>
-
-                    <ServiceCard heading="API Development" imgSrc={IC_CODE}>
-                        <span>NodeJS REST API</span>
-                        <span>GraphQL API</span>
-                        <span>WebSockets</span>
-                    </ServiceCard>
-                    <ServiceCard
-                        heading="Web Design & Development"
-                        imgSrc={IC_CODE}
-                    >
-                        <span>WordPress</span>
-                        <span>Webflow, Carrd</span>
-                        <span>React / NextJS</span>
-                    </ServiceCard>
-                    <ServiceCard heading="UI/UX Design" imgSrc={IC_CODE}>
-                        <span>Web App Design</span>
-                        <span>Mobile App</span>
-                        <span>Functional Prototypes</span>
-                    </ServiceCard>
-                    <ServiceCard
-                        heading="Extension Development"
-                        imgSrc={IC_CODE}
-                    >
-                        <span>Microsoft Edge</span>
-                        <span>Google Chrome</span>
-                    </ServiceCard>
-                </Stack>
-                {/* The background flaire  */}
-                <Stack
-                    style={{
-                        position: "absolute",
-                        width: "742px",
-                        height: "742px",
-                        borderRadius: "742px",
-                        background: "rgba(37, 99, 235, 0.20)",
-                        filter: "blur(126px)",
-                    }}
-                ></Stack>
-            </Stack>
-
-            <Stack className="mt-60" />
-            <Stack>
-                <Stack
-                    className="abs-center"
-                    style={{
-                        overflow: "visible",
-                        position: "absolute",
-                        width: "742px",
-                        height: "742px",
-                        borderRadius: "742px",
-                        background: "rgba(37, 99, 235, 0.20)",
-                        filter: "blur(126px)",
-                    }}
-                ></Stack>
-                <SectionDivider title="Testimonials" />
-
-                <Stack className="marquee">
-                    <Stack
-                        className="flex flex-row justify-center items-center space-x-8 mb-40 testimonialsContainer"
-                        style={{ width: "100%" }}
-                    >
-                        <TestimonialCard
-                            text="Test1"
-                            authorName="Ahmed Jamal"
-                            authorCountry="Quetta, Pakistan"
-                        />
-                        <TestimonialCard
-                            text="Test"
-                            authorName="Ahmed Jamal"
-                            authorCountry="Quetta, Pakistan"
-                        />
-                        <TestimonialCard
-                            text="Test"
-                            authorName="Ahmed Jamal"
-                            authorCountry="Quetta, Pakistan"
-                        />
-                        <TestimonialCard
-                            text="Test"
-                            authorName="Ahmed Jamal"
-                            authorCountry="Quetta, Pakistan"
-                        />
-                        <Testimonialcard
-                            text="Test"
-                            authorName="Ahmed Jamal"
-                            authorCountry="Quetta, Pakistan"
-                        />
-                        <TestimonialCard
-                            text="Test"
-                            authorName="Ahmed Jamal"
-                            authorCountry="Quetta, Pakistan"
-                        />
-                        <TestimonialCard
-                            text="Test"
-                            authorName="Ahmed Jamal"
-                            authorCountry="Quetta, Pakistan"
-                        />
-                    </Stack>
-                </Stack>
-            </Stack>
-
-            {/* Integrations  */}
-            <image
-                src={IC_CODE}
-                alt="Star"
-                style={{
-                    position: "absolute",
-                    right: "100px",
-                    marginTop: "170px",
-                }}
-            />
-            <Stack className="flex flex-col justify-center items-center">
-                <image src={IC_CODE} alt="Integrations" />
-                <h3
-                    className={IC_CODE.className}
-                    style={{
-                        fontSize: "48px",
-                        fontWeight: 700,
-                    }}
-                >
-                    Integrations
-                </h3>
-
-                {/* The glass background  */}
-                <image
-                    src={IC_CODE}
-                    alt="DD"
-                    style={{ flex: 1, zIndex: -1, position: "absolute" }}
-                />
-
-                <Stack
-                    style={{
-                        marginTop: "60px",
-                        mask: "linear-gradient(45deg, #00000000, #FFF)",
-                        borderRadius: "64px",
-                        border: "1px solid rgba(255, 255, 255, 0.22)",
-                        padding: "32px",
-                        backgroundBlendMode: "darken",
-                        background:
-                            "linear-gradient(241deg, rgba(37, 99, 235, 0.10) 2.22%, rgba(2, 132, 199, 0.00) 20.68%), linear-gradient(68deg, rgba(37, 99, 235, 0.10) 1.6%, rgba(2, 132, 199, 0.00) 22.68%), rgba(17, 24, 39, 0.30)",
-                    }}
-                >
-                   <Stack className="grid grid-cols-4 gap-8 gap-y-12">
-                        {/* Start of the card  */}
-                        <IntegrationCard
-                            heading="Stripe"
-                            imgSrc={IC_CODE}
-                            style={{
-                                background: "#9198E3",
-                                color: "black",
-                            }}
-                        >
-                            <span>- Checkouts</span>
-                            <span>- Subscriptions</span>
-                            <span>- Webhooks</span>
-                        </IntegrationCard>
-                        <IntegrationCard
-                            heading="Google Cloud"
-                            imgSrc={IC_CODE}
-                            style={{ background: "#22C55E", color: "black" }}
-                        >
-                            <span>- Cloud Run</span>
-                            <span>- Firebase & Firestore</span>
-                            <span>- Client APIs</span>
-                        </IntegrationCard>
-                        <IntegrationCard
-                            heading="Email APIs"
-                            imgSrc={IC_CODE}
-                            style={{ background: "#FF424D" }}
-                        >
-                            <span>- Mailgun</span>
-                            <span>- MailerSend</span>
-                            <span>- MailerLite</span>
-                        </IntegrationCard>
-                        <IntegrationCard
-                            style={{ background: "#64ACFF", color: "black" }}
-                            heading="NOWPayments"
-                            imgSrc={IC_CODE}
-                        >
-                            <span>- 200+ Currencies</span>
-                            <span>- Direct Transfers</span>
-                            <span>- Subscriptions</span>
-                        </IntegrationCard>
-
-                        <IntegrationCard heading="AI & LLM" imgSrc={IC_CODE}>
-                            <span>- OpenAI's GPT API</span>
-                            <span>- Pinecone Database</span>
-                            <span>- LangChain API</span>
-                        </IntegrationCard>
-                        <IntegrationCard
-                            heading="Browser Integrations"
-                            imgSrc={IC_CODE}
-                            style={{ background: "#FDE047", color: "black" }}
-                        >
-                            <span>- Website Automation</span>
-                            <span>- Automated Testing</span>
-                        </IntegrationCard>
-                        <IntegrationCard
-                            heading="Livechat.com"
-                            imgSrc={IC_CODE}
-                            style={{ background: "#FF905C", color: "black" }}
-                        >
-                            <span>- Agent API</span>
-                            <span>- Customer API</span>
-                            <span>- Widgets API</span>
-                        </IntegrationCard>
-                        <IntegrationCard
-                            heading="Web3"
-                            imgSrc={IC_CODE}
-                            style={{ background: "#C7A6FF", color: "black" }}
-                        >
-                            <span>- Web3.js in React/NextJS</span>
-                            <span>- Ethers in NodeJS</span>
-                            <span>- Smart Contracts</span>
-                        </IntegrationCard>
-                    </Stack>
-                </Stack>
-            </Stack>
-            <image
-                src={IC_CODE}
-                alt="Star"
-                style={{
-                    position: "absolute",
-                    left: "100px",
-                    marginTop: "-100px",
-                }}
-            />
-        </main>
-    );
+     <Stack
+ 
+       sx={{display:"grid",
+       gridTemplateColumns:"290px 290px 290px 290px",
+       alignItems:"center",
+       gridAutoColumns:"minmax(200px,auto)",
+       gridAutoRows:"minmax(200px,auto)",
+     
+      width: "1225px",
+      height:"640px",
+        border:"1px solid rgba(255, 255, 255, 0.63)",  
+      }}>
+      <Integrationcard
+      username="Stripe"
+      about2="Stripe Subscriptions Invoices Payment Wall"
+     
+      src= {STRIPE}/>
+     <Integrationcard
+       username="Bot Development"
+       about1="NodeJS REST API"
+       src= {STRIPE}/>
+    <Integrationcard 
+     username="Bot Development"
+     about1="NodeJS REST API"
+     src= {STRIPE}/><Integrationcard 
+     username="Bot Development"
+     about1="NodeJS REST API"
+     src= {STRIPE}/>
+      <Integrationcard
+      username="Stripe"
+      about2="Stripe Subscriptions Invoices Payment Wall"
+      src= {STRIPE}style={{backgroundColor:"red"}} />
+    <Integrationcard
+       username="Bot Development"
+       about1="NodeJS REST API"
+       src= {STRIPE}/>
+    <Integrationcard 
+     username="Bot Development"
+     about1="NodeJS REST API"
+     src= {STRIPE}/><Integrationcard 
+     username="Bot Development"
+     about1="NodeJS REST API"
+     src= {STRIPE}/>
+     
+    
+     </Stack>
+     <Text heading="Got a Project? Lets Talk"
+     about="Let's work together to build the bots, apps,
+     and APIs that will help your business grow."
+     />
+     <Input/>
+     <Text heading="Meet Our Team"
+     about="Our team is passionate about helping businesses grow through technology."
+     />
+     <Stack sx={{width:"1130px",
+       height:"810px",
+       display:"grid",
+       maxWidth: "1280px",
+       gridTemplateColumns:"332px 332px 332px 332px",
+       alignItems:"center",
+       gridAutoColumns:"minmax(200px,auto)",
+       gridAutoRows:"minmax(200px,auto)",
+        border:"1px solid rgba(255, 255, 255, 0.63)"
+     }}> 
+     <Team />
+     <Team />
+     <Team />
+     <Team />
+     <Team />
+     <Team />
+     <Team /> <Team />
+     
+     
+     </Stack>
+     </Stack>
+     </Stack>
+    
+    
+   
+  );
+  
 }

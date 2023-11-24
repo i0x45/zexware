@@ -5,7 +5,7 @@ import React from "react";
 export default function Matrics () {
     return(
 <Stack>
-    <Stack sx={{height:"342px",
+    <Stack sx={{
      width:"auto",
       backgroundColor:" ",
       marginLeft:"30px",

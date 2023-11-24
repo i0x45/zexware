@@ -185,7 +185,7 @@ export default function Input () {
                     color:"white"
                     }}> Message
                
-                     <TextField   sx={{width:"469px" ,height:"100px", borderRadius:"2px", backgroundColor:"#3B4D67A1",}}
+                     <TextField   sx={{width:"469px" ,height:"100px", borderRadius:"2px", backgroundColor:"#3B4D67A1",color:"white"}}
           id="standard-multiline-static"
           
         
