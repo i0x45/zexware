@@ -18,7 +18,10 @@ import Text from './components/text';
 // import HERO_BG from "./assets/brand/hero_bg.png"
 import Input from './components/input';
 import Team from './components/team';
-
+import IC_X from "./assets/ic_x.png"
+import IC_IN from "./assets/ic_in.png"
+import IC_SOCIALICON from "./assets/ic_socialicon.png"
+import AVATAR from "./assets/avatar.png"
  export default function App() {
   //  let about = { about1="NodeJS REST API" 
   //  about2="GraphQL API"
@@ -111,23 +114,39 @@ import Team from './components/team';
      <Text heading="Meet Our Team"
      about="Our team is passionate about helping businesses grow through technology."
      />
-     <Stack sx={{width:"1130px",
-       height:"810px",
-       display:"grid",
-       maxWidth: "1280px",
-       gridTemplateColumns:"332px 332px 332px 332px",
-       alignItems:"center",
-       gridAutoColumns:"minmax(200px,auto)",
-       gridAutoRows:"minmax(200px,auto)",
-        border:"1px solid rgba(255, 255, 255, 0.63)"
+     <Stack direction={"row"} sx={{
+      
      }}> 
-     <Team />
-     <Team />
-     <Team />
-     <Team />
-     <Team />
-     <Team />
-     <Team /> <Team />
+     <Team
+     profile={AVATAR}
+     heading="Zaid Schwartz"
+     user="Backend Developer"
+     text1="Former frontend dev for Linear,"
+      text2="Coinbase, and Postscript."
+     icon1=  {IC_SOCIALICON}
+     icon2= {IC_IN}
+     icon3= {IC_X}
+     />
+    <Team
+     profile={AVATAR}
+     heading="Zaid Schwartz"
+     user="Backend Developer"
+     text1="Former frontend dev for Linear,"
+      text2="Coinbase, and Postscript."
+     icon1=  {IC_SOCIALICON}
+     icon2= {IC_IN}
+     icon3= {IC_X}
+     />
+     <Team
+     profile={AVATAR}
+     heading="Zaid Schwartz"
+     user="Backend Developer"
+     text1="Former frontend dev for Linear,"
+      text2="Coinbase, and Postscript."
+     icon1=  {IC_SOCIALICON}
+     icon2= {IC_IN}
+     icon3= {IC_X}
+     />
      
      
      </Stack>
