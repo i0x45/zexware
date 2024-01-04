@@ -1,5 +1,5 @@
 
-import { Stack } from '@mui/material';
+import { Stack, Typography, useMediaQuery } from '@mui/material';
 import './App.css';
 import Header from './components/header';
 import Hero from './components/hero';
@@ -22,24 +22,50 @@ import IC_X from "./assets/ic_x.png"
 import IC_IN from "./assets/ic_in.png"
 import IC_SOCIALICON from "./assets/ic_socialicon.png"
 import AVATAR from "./assets/avatar.png"
+import GLOW from "./assets/brand/glow.png"
+
  export default function App() {
+  const desktop = useMediaQuery("screen and (min-width: 710px)");
   //  let about = { about1="NodeJS REST API" 
   //  about2="GraphQL API"
   //  about3="Poti API"}
   return (
    
-    <Stack sx={{height:"800vh", backgroundColor:"#030712",}} >
-        <Stack sx={{height:"800px", backgroundColor:"#030712",
+    <Stack sx={{
+      bgcolor: "#030712",
+           scrollBehavior: "smooth",}} >
+        <Stack sx={{height:"800px",
+        //  backgroundColor:"#030712",
       }}>
+           {/* hero section */}
      <Header/> 
      <Hero /> 
      </Stack>
-     <Stack sx={{  backgroundColor:"#030712",alignItems:"center" }}>
+     <Stack sx={{ 
+      //  backgroundColor:"#030712",
+       alignItems:"center" }}>
+      <Stack>  
      <Matrics />
+     </Stack>
+    
      {/* service section */}
+     <Stack justifyContent={"center"} alignItems={"center"}>
+          <img
+            src={GLOW}
+            style={{
+              position: "absolute",
+              marginTop: "240px",
+              overflow: "hidden",
+              height: "100%",
+              width: "100%",
+            }} alt=''
+          />
+        </Stack>
      <Services name="Services"/>
      <Stack spacing={"48px"} >
+    
      <Stack direction={"row"}spacing={"25px"}>
+    
      <ServiceCard  username="Bot Development"about1="NodeJS REST API"about2="GraphQL API"about3="Poti API"src= {IC_CODE}/>
      <ServiceCard username="Web App Development"about1="React + MUIv5"about2="NextJS + Tailwindcss"about3="Widgets" src= {IC_WEB}/>
      <ServiceCard username="Desktop App Development"  about1=""about2=""about3=""  src= {IC_DESKTOP}/>
@@ -53,13 +79,37 @@ import AVATAR from "./assets/avatar.png"
     </Stack>
     </Stack>
      <Services name="Testimonials "/>
+     <Stack justifyContent={"center"} alignItems={"center"}>
+          <img
+            src={GLOW}
+            style={{
+              position: "absolute",
+              marginTop: "-240px",
+              overflow: "hidden",
+              height: "100%",
+              width: "100%",
+            }}alt=''
+          />
+        </Stack>
      <Stack direction={"row"}>
      <Testimonialcard Author="shahid ali"/>
      <Testimonialcard Author="Ahmed Jamal "/>
      <Testimonialcard Author="Sattar "/>
      </Stack>
+     <Stack justifyContent={"center"} alignItems={"center"}>
+          <img
+            src={GLOW}
+            style={{
+              position: "absolute",
+              marginTop: "240px",
+              overflow: "hidden",
+              height: "100%",
+              width: "100%",
+            }} alt=''
+          />
+        </Stack>
      <Integration/>
-
+ 
      <Stack
  
        sx={{display:"grid",
@@ -106,11 +156,24 @@ import AVATAR from "./assets/avatar.png"
      
     
      </Stack>
-     <Text heading="Got a Project? Lets Talk"
+     <Stack >
+     {/* <Text heading="Got a Project? Lets Talk"
      about="Let's work together to build the bots, apps,
      and APIs that will help your business grow."
      />
-     <Input/>
+     <Input/> */}
+      <Stack justifyContent={"center"} alignItems={"center"}>
+          <img
+            src={GLOW}
+            style={{
+              position: "absolute",
+              marginTop: "240px",
+              overflow: "hidden",
+              height: "100%",
+              width: "100%",
+            }} alt=''
+          />
+        </Stack>
      <Text heading="Meet Our Team"
      about="Our team is passionate about helping businesses grow through technology."
      />
@@ -146,7 +209,7 @@ import AVATAR from "./assets/avatar.png"
      icon1=  {IC_SOCIALICON}
      icon2= {IC_IN}
      icon3= {IC_X}
-     />
+     /></Stack>
      
      
      </Stack>
