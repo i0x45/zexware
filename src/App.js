@@ -25,6 +25,15 @@ import AVATAR from "./assets/avatar.png"
 import GLOW from "./assets/brand/glow.png"
 import Footer from './components/Footer';
 import BG_DOTS from "./assets/brand/bg_dots.png"
+import IC_GCLOUD from "./assets/ic_gcloud.png"
+import IC_PATREON from "./assets/ic_patreon.png"
+import IC_OPENSEA from "./assets/ic_opensea.png"
+import IC_NOWPAYMENTS from "./assets/ic_nowpayments.png"
+import IC_CHROME from "./assets/ic_chrome.png"
+import IC_LIVECHAT from "./assets/ic_livechat.png"
+import IC_WEB3 from "./assets/ic_web3.png"
+
+
 
  export default function App() {
   const desktop = useMediaQuery("screen and (min-width: 710px)");
@@ -157,7 +166,10 @@ import BG_DOTS from "./assets/brand/bg_dots.png"
          </Stack>
             {/* Integration heading*/}
             
-     <Integration/>
+   <Stack
+    sx={{marginBottom:"50px"}}
+    > 
+     <Integration/></Stack>
      <Stack>
 <img
   src={BG_DOTS}
@@ -179,13 +191,15 @@ import BG_DOTS from "./assets/brand/bg_dots.png"
      <Stack
  
         sx={{display:"grid",
-        gridTemplateColumns:"290px 290px 290px 290px",
+        gridTemplateColumns:"350px 350px 350px 350px",
         alignItems:"center",
         gridAutoColumns:"minmax(200px,auto)",
         gridAutoRows:"minmax(200px,auto)",
-     
-       width: "1225px",
-        height:"640px",
+        rowGap:"40px",
+        width:desktop ?  "auto" : "auto",
+       height :desktop ? "630px" : "1200px",
+      
+        
          // border:"border: 1px solid red"
        }}>
         <Integrationcard 
@@ -194,31 +208,31 @@ import BG_DOTS from "./assets/brand/bg_dots.png"
      
        src= {STRIPE}/>
        <Integrationcard
-       username="Bot Development"
+       username="Google Cloud"
        about1="NodeJS REST API"
-       src= {STRIPE}/>
+       src= {IC_GCLOUD }/>
        <Integrationcard 
-       username="Bot Development"
+       username="Email APIs"
         about1="NodeJS REST API"
-       src= {STRIPE}/><Integrationcard 
-       username="Bot Development"
+       src= {IC_PATREON }/><Integrationcard 
+       username="AI & LLM"
        about1="NodeJS REST API"
-       src= {STRIPE}/>
+       src= {IC_OPENSEA}/>
        <Integrationcard
-       username="Stripe"
+       username="Nowpayments"
        about2="Stripe Subscriptions Invoices Payment Wall"
-        src= {STRIPE}style={{backgroundColor:"red"}} />
+        src= {IC_NOWPAYMENTS}style={{backgroundColor:"red"}} />
        <Integrationcard
-        username="Bot Development"
+        username="Puppeteer"
         about1="NodeJS REST API"
-        src= {STRIPE}/>
+        src= {IC_CHROME}/>
        <Integrationcard 
-       username="Bot Development"
+       username="Livechat.com"
        about1="NodeJS REST API"
-       src= {STRIPE}/><Integrationcard 
-       username="Bot Development"
+       src= {IC_LIVECHAT}/><Integrationcard 
+       username="Web3"
        about1="NodeJS REST API"
-       src= {STRIPE}/>
+       src= {IC_WEB3}/>
      
     
       </Stack>
