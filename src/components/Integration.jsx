@@ -7,22 +7,19 @@ export default function Integration ({name}) {
         <Stack 
 			sx={{
 				display: "flex",
-				
 				justifyContent: "center",
 				alignItems: "center",
-				
 				marginTop: "100px",
-				marginBottom: "100px",
+				
 			}}
 		><Stack>
 			<img src={INTEGRATIONS}alt="Integrations"></img>
 			</Stack>
             <Typography>
             <h3
-				
 				style={{ fontSize: "48px",  color:'white', fontFamily:' Sk-Modernist',fontWeight:"700" }}
 			>
-				Integrations
+		      Integrations
 			</h3>
             </Typography>
 </Stack>

@@ -23,6 +23,8 @@ import IC_IN from "./assets/ic_in.png"
 import IC_SOCIALICON from "./assets/ic_socialicon.png"
 import AVATAR from "./assets/avatar.png"
 import GLOW from "./assets/brand/glow.png"
+import Footer from './components/Footer';
+import BG_DOTS from "./assets/brand/bg_dots.png"
 
  export default function App() {
   const desktop = useMediaQuery("screen and (min-width: 710px)");
@@ -66,16 +68,48 @@ import GLOW from "./assets/brand/glow.png"
     
      <Stack direction={"row"}spacing={"25px"}>
     
-     <ServiceCard  username="Bot Development"about1="NodeJS REST API"about2="GraphQL API"about3="Poti API"src= {IC_CODE}/>
-     <ServiceCard username="Web App Development"about1="React + MUIv5"about2="NextJS + Tailwindcss"about3="Widgets" src= {IC_WEB}/>
-     <ServiceCard username="Desktop App Development"  about1=""about2=""about3=""  src= {IC_DESKTOP}/>
-     <ServiceCard username="Android App Development"about1=""about2=""about3="" src= {IC_MOBILE}/>
+     <ServiceCard  username="Bot Development"
+     about1="NodeJS REST API"
+     about2="GraphQL API"
+     about3="Poti API"
+     src= {IC_CODE}/>
+
+     <ServiceCard username="Web App Development"
+     about1="React + MUIv5"
+     about2="NextJS + Tailwindcss"
+     about3="Widgets"
+      src= {IC_WEB}/>
+
+     <ServiceCard username="Desktop App Development"
+       about1=""
+       about2=""
+       about3=""  
+       src= {IC_DESKTOP}/>
+     <ServiceCard username="Android App Development"
+     about1=""about2=""about3=""
+      src= {IC_MOBILE}/>
      </Stack >
-     <Stack direction={"row"}spacing={"25px"} ><ServiceCard  username="Bot Development"about1="NodeJS REST API"about2="GraphQL API"about3="Poti API"src= {IC_CODE}
+     <Stack direction={"row"}
+     spacing={"25px"} >
+      <ServiceCard  username="Bot Development"
+      about1="NodeJS REST API"
+      about2="GraphQL API"
+      about3="Poti API"
+      src= {IC_CODE}
         />
-     <ServiceCard username="Web App Development"about1="React + MUIv5"about2="NextJS + Tailwindcss"about3="Widgets" src= {IC_WEB}/>
-     <ServiceCard username="Desktop App Development"  about1=""about2=""about3=""  src= {IC_DESKTOP}/>
-     <ServiceCard username="Android App Development"about1=""about2=""about3="" src= {IC_MOBILE}/>
+     <ServiceCard 
+     username="Web App Development"
+     about1="React + MUIv5"
+     about2="NextJS + Tailwindcss"
+     about3="Widgets"
+      src= {IC_WEB}/>
+     <ServiceCard
+      username="Desktop App Development"
+        about1=""about2=""about3=""  
+        src= {IC_DESKTOP}/>
+     <ServiceCard username="Android App Development"
+     about1=""about2=""about3="" 
+     src= {IC_MOBILE}/>
     </Stack>
     </Stack>
      <Services name="Testimonials "/>
@@ -108,55 +142,89 @@ import GLOW from "./assets/brand/glow.png"
             }} alt=''
           />
         </Stack>
+        <Stack>
+<img
+  src={BG_DOTS}
+  alt=""
+  style={{
+    position: "absolute",
+    right: 0,
+    marginTop: "-250px",
+    pointerEvents: "none",
+  }}
+/>
+
+         </Stack>
+            {/* Integration heading*/}
+            
      <Integration/>
- 
+     <Stack>
+<img
+  src={BG_DOTS}
+  alt=""
+  style={{
+    position: "absolute",
+    right: 0,
+    marginTop: "-250px",
+    pointerEvents: "none",
+  }}
+/>
+
+</Stack>
+       <Stack  
+       sx={{border: "1px solid rgba(255, 255, 255, 0.63)",
+         backdropFilter: "blur(0px)",
+         alignItems:"center",justifyContent:"center"}}
+      >
      <Stack
  
-       sx={{display:"grid",
-       gridTemplateColumns:"290px 290px 290px 290px",
-       alignItems:"center",
-       gridAutoColumns:"minmax(200px,auto)",
-       gridAutoRows:"minmax(200px,auto)",
+        sx={{display:"grid",
+        gridTemplateColumns:"290px 290px 290px 290px",
+        alignItems:"center",
+        gridAutoColumns:"minmax(200px,auto)",
+        gridAutoRows:"minmax(200px,auto)",
      
-      width: "1225px",
-      height:"640px",
-        border:"1px solid rgba(255, 255, 255, 0.63)",  
-      }}>
-      <Integrationcard
-      username="Stripe"
-      about2="Stripe Subscriptions Invoices Payment Wall"
+       width: "1225px",
+        height:"640px",
+         // border:"border: 1px solid red"
+       }}>
+        <Integrationcard 
+       username="Stripe"
+       about2="Stripe Subscriptions Invoices Payment Wall"
      
-      src= {STRIPE}/>
-     <Integrationcard
+       src= {STRIPE}/>
+       <Integrationcard
        username="Bot Development"
        about1="NodeJS REST API"
        src= {STRIPE}/>
-    <Integrationcard 
-     username="Bot Development"
-     about1="NodeJS REST API"
-     src= {STRIPE}/><Integrationcard 
-     username="Bot Development"
-     about1="NodeJS REST API"
-     src= {STRIPE}/>
-      <Integrationcard
-      username="Stripe"
-      about2="Stripe Subscriptions Invoices Payment Wall"
-      src= {STRIPE}style={{backgroundColor:"red"}} />
-    <Integrationcard
+       <Integrationcard 
+       username="Bot Development"
+        about1="NodeJS REST API"
+       src= {STRIPE}/><Integrationcard 
        username="Bot Development"
        about1="NodeJS REST API"
        src= {STRIPE}/>
-    <Integrationcard 
-     username="Bot Development"
-     about1="NodeJS REST API"
-     src= {STRIPE}/><Integrationcard 
-     username="Bot Development"
-     about1="NodeJS REST API"
-     src= {STRIPE}/>
+       <Integrationcard
+       username="Stripe"
+       about2="Stripe Subscriptions Invoices Payment Wall"
+        src= {STRIPE}style={{backgroundColor:"red"}} />
+       <Integrationcard
+        username="Bot Development"
+        about1="NodeJS REST API"
+        src= {STRIPE}/>
+       <Integrationcard 
+       username="Bot Development"
+       about1="NodeJS REST API"
+       src= {STRIPE}/><Integrationcard 
+       username="Bot Development"
+       about1="NodeJS REST API"
+       src= {STRIPE}/>
      
     
-     </Stack>
+      </Stack>
+      </Stack>
      <Stack >
+    
      {/* <Text heading="Got a Project? Lets Talk"
      about="Let's work together to build the bots, apps,
      and APIs that will help your business grow."
@@ -211,8 +279,14 @@ import GLOW from "./assets/brand/glow.png"
      icon3= {IC_X}
      /></Stack>
      
-     
+    
      </Stack>
+     </Stack>
+     <Stack
+      sx={{marginTop:"100px"}}>
+
+     <Footer/>
+     
      </Stack>
      </Stack>
     

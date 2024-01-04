@@ -5,12 +5,14 @@ import React from "react";
 
 
 export default function ServiceCard({username,about1,about2,about3,src,  }) {
-	return (<Stack spacing={"16px"} sx={{width:"225px",height:"200px",backgroundColor:"#1F2937",
-	borderRadius: "32px",margin:"0px 50px ",padding:" 40px 24px",
-	
-	
-	
-	border: "1px solid rgba(255, 255, 255, 0.22)",
+	return (<Stack spacing={"16px"}
+	 sx={{width:"225px",
+	 height:"200px",
+	 backgroundColor:"#1F2937",
+	 borderRadius: "32px",
+	 margin:"0px 50px ",
+	 padding:" 40px 24px",
+	 border: "1px solid rgba(255, 255, 255, 0.22)",
 	}}>
 		<Typography sx={{width:"51px",height:"51px", }}>
 		{/* {img} */}
